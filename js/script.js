@@ -1,7 +1,5 @@
-function printMessage("Zagrałem" + computerMove + "!Jeśli Twój ruch to" + playerMove + , "to wygrywasz!"); {
+function printMessage(msg) {
     let div = document.createElement('div');
-    let computerMove = `kamień`;
-    let playerMove = "papier";
     div.innerHTML = msg;
     document.getElementById('messages').appendChild(div);
 }
@@ -9,3 +7,8 @@ function printMessage("Zagrałem" + computerMove + "!Jeśli Twój ruch to" + pla
 function clearMessages() {
     document.getElementById('messages').innerHTML = '';
 }
+let computerMove = `kamień`;
+let playerMove = "papier"
+
+printMessage('Zagrałem ' + computerMove + " !  Jeśli Twój ruch to " +
+    playerMove + ", to wygrywasz!")
