@@ -13,14 +13,10 @@ function getMoveName(argMoveId) {
     if (argMoveId == 1) {
         return 'kamień';
     } else if (argMoveId == 2) {
-        argcomputerMove = 'papier';
         return 'papier';
     } else if (argMoveId == 3) {
-        argcomputerMove = 'nozyce';
         return 'nozyce';
-    }
-
-    printMessage('Nie znam ruchu o id ' + argMoveId + '.');
+    } else(printMessage('Nie znam ruchu o id ' + argMoveId + '.'));
     return 'nieznany ruch';
 }
 
@@ -38,9 +34,9 @@ if (randomNumber == 1) {
     computerMove = 'papier';
 } else if (randoNumber == 3) {
     computerMove = 'nozyce';
-}
-printMessage('Mój ruch to: ' + computerMove);
-*/
+}*/
+printMessage('Mój ruch to: ' + argcomputerMove);
+
 let argplayerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
 
 console.log('Gracz wpisał: ' + argplayerInput);
@@ -56,13 +52,13 @@ if (playerInput == '1') {
 } else if (playerInput == '3') {
     playerMove = 'nożyce';
 }
-
-printMessage('Twój ruch to: ' + playerMove);
 */
-function displayResult(argComputerMove, argPlayerMove) {
-    printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
+printMessage('Twój ruch to: ' + argplayerMove);
 
-    if (argComputerMove == 'kamień' && argPlayerMove == 'papier') {
+function displayResult(argcomputerMove, argplayerMove) {
+    console.log(argcomputerMove + argplayerMove);
+    printMessage('Zagrałem ' + argcomputerMove + ', a Ty ' + argplayerMove);
+    if (argComputerMove == 'kamień' && argplayerMove == 'papier') {
         printMessage('Ty wygrywasz!');
     } else if (argcomputerMove == 'papier' && argplayerMove == 'kamień') {
         printMessage('Komputer wygrywa!');
@@ -78,8 +74,11 @@ function displayResult(argComputerMove, argPlayerMove) {
         printMessage('Remis!');
     } else if (argcomputerMove == 'nożyce' && argplayerMove == 'kamień') {
         printMessage('Ty wygrywasz!');
+    } else {
+        (printMessage('Zły ruch!'));
     }
 }
+displayResult(argcomputerMove, argplayerMove)
 
 /*
 if (computerMove == 'kamień' && playerMove == 'papier') {
