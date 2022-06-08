@@ -8,13 +8,12 @@ function clearMessages() {
     document.getElementById('messages').innerHTML = '';
 }
 /*START GAME*/
-let resultComputer = 0;
-let resultPlayer = 0;
 
-function playGame(playerInput) {
+
+const playGame = function(playerInput) {
     clearMessages();
 
-    function getMoveName(argMoveId) {
+    const getMoveName = function(argMoveId) {
         if (argMoveId == 1) {
             return 'kamień';
         } else if (argMoveId == 2) {
@@ -32,8 +31,10 @@ function playGame(playerInput) {
     console.log('Gracz wpisał: ' + playerInput);
 
     printMessage('Twój ruch to: ' + argplayerMove);
+    let resultComputer = 0;
+    let resultPlayer = 0;
 
-    function displayResult(argcomputerMove, argplayerMove) {
+    const displayResult = function(argcomputerMove, argplayerMove) {
         console.log(argcomputerMove + argplayerMove);
         printMessage('Zagrałem ' + argcomputerMove + ', a Ty ' + argplayerMove);
 
